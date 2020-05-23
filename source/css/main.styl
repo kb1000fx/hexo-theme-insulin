@@ -1,0 +1,141 @@
+@import "highlight"
+@import "page"
+
+$background-color=rgb(245,245,245)
+
+#app{
+  //background: $background-color
+}
+
+#page{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/*侧边栏*/
+#sidebar {
+  position: fixed;
+  width:160px;   
+  //height: 850px 
+  //background: $background-color
+  & .v-avatar{
+      margin:15px 32px;
+  }
+  & .v-list{
+     //background: $background-color
+  }
+}
+#cat-menu{  
+  & .v-badge{
+    margin: auto;
+    width: 100%;
+  }
+  & .v-list-item__content{
+    text-align:center;
+  }
+}
+
+
+/*标题栏*/
+#site-title{
+  font-size: 36px
+  opacity: .96
+  & a {
+    text-decoration: none;
+    &:visited, &:link {
+      color: unset;
+    }
+  }    
+}
+#site-description{
+  font-size: 24px
+  color: #444
+  opacity: .89
+}
+
+/*底部导航*/
+#pagination{
+  margin-top: 20px
+}
+
+/*页脚*/
+#footer{
+  //bottom: 100px;
+  position: relative;
+}
+
+//
+.post-content{
+  margin: 15px 0;
+}
+
+.index-card{
+  padding: 10px 30px;
+  & .index-article{
+    padding: 10px 0;
+  }
+}
+
+.index-article-header{
+  & a{
+    text-decoration: none;
+    &:visited, &:link {
+      color: unset;
+    }
+  }
+  & .index-article-header-title{
+    font-size: 28px;
+    line-height: 42px;
+    opacity: .92;
+  }
+  & .index-article-header-category{
+    font-size: 20px;
+    line-height: 30px;
+    opacity: .59;
+  }
+}
+
+.index-article-readmore{
+    //color: black;
+    border: 2px solid sub-accent-color;
+    &:hover {
+    background-color: sub-accent-color;
+    color: white;
+    }
+}
+
+.post-header{
+  text-align:center;
+  position: relative;
+  padding: 40px 30px 0px 30px;
+  .post-img &{
+    padding: 24px;
+  }
+  & .post-header-title {
+    text-decoration: none;
+    display: block;
+    font-size: 28px;
+    line-height: 42px;
+    opacity: .87;
+    &:visited, &:link {
+      color: unset
+    }
+  }
+  .post-header-meta{
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .75;
+    &>span+span::before{
+      content: "|";
+      margin: 0 0.5em;
+    }
+    &>span>i{
+      margin: 0 0.5em 0 0;
+    }
+    & a:visited, & a:link {
+      color: unset
+    }
+  }
+}

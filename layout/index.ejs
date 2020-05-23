@@ -1,0 +1,43 @@
+<v-card class="elevation-2 index-card">
+  <% page.posts.each(function (post) { %>
+    <article class="index-article">
+      <%#标题%>
+      <div class="index-article-header">
+        <span>
+          <%if(post.categories.data[0]){%>
+            <a class="index-article-header-category font-weight-bold" href="<%-url_for(post.categories.data[0].path)%>"><%=post.categories.data[0].name%>></a>
+          <%}else{%>
+            <a class="index-article-header-category font-weight-bold" href="<%-url_for(post.path)%>"><%=__('uncategorized')%>></a>
+          <%}%> 
+        </span>     
+        <a class="index-article-header-title font-weight-medium" href="<%-url_for(post.path)%>"><%=post.title%></a>
+      </div>
+      <%#摘要%>
+      <div class="post-content">
+        <% if (post.excerpt) { %>
+          <%- strip_html(post.excerpt) %>
+        <% } else { %>
+          <%- truncate(strip_html(post.content), {length: theme.excerpt_length}) %>
+        <% } %>
+      </div>
+      <%# 阅读更多%>
+      <div style="text-align:center;">
+        <a class="index-article-readmore mdui-btn mdui-ripple mdui-btn-raised" href="<%-url_for(post.path)%>"%>><%= __('more') %></a>
+      </div>
+      <v-btn text small disabled>Disabled</v-btn>
+      <v-divider></v-divider>
+    </article> 
+  <% }); %> 
+</v-card>  
+
+<% if (page.total > 1) { %>
+  <div id="pagination" class="text-center">
+    <v-pagination 
+      v-model="currentPage" 
+      :length=<%=page.total%> 
+      @input="PageChange" 
+      prev-icon="chevron_left"
+      next-icon="chevron_right"
+    ></v-pagination>
+  </div>
+<%}%> 

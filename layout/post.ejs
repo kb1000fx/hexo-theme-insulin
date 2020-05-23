@@ -1,0 +1,12 @@
+<v-card class="elevation-2">
+    <% if (page.photos.length != 0) { %>
+        <v-img src="<%= page.photos[0] %>" class="post-img white--text align-end">
+            <%- partial('_partial/post-header') %>
+        </v-img>
+    <%}else{%>
+        <%- partial('_partial/post-header') %>
+    <%}%>
+    <div class="post-content">
+        <%- page.content %>
+    </div>
+</v-card>

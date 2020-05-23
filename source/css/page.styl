@@ -1,0 +1,54 @@
+/*表格边框*/
+table{
+  border-collapse: collapse;
+}
+tr td,th{
+  border:1px solid #444;
+}
+
+/*引用块*/
+blockquote {
+  padding-left: 1em;
+  margin: 1em 3em 1em 2em;
+  font-weight: 400;
+  border-left: 4px solid rgba(0, 0, 0, .12);
+}
+@media only screen and (max-width: 599px) {
+  .mdui-typo blockquote {
+    margin: 1em 0;
+  }
+}
+.theme--dark blockquote {
+  border-left-color: rgba(255, 255, 255, .12);
+}
+
+/* 响应式图片和视频 */
+.mdui-img-fluid,
+.mdui-video-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* 圆角图片 */
+.mdui-img-rounded {
+  border-radius: 2px;
+}
+/* 圆形图片 */
+.mdui-img-circle {
+  border-radius: 50%;
+}
+.mdui-video-container {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.mdui-video-container iframe,
+.mdui-video-container object,
+.mdui-video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
