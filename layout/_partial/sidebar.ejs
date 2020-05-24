@@ -5,26 +5,26 @@
         </v-avatar> 
     </a>
     <v-divider></v-divider>
-    <v-list flat>
+    <v-list id="main-menu" class="font-weight-bold" flat>
         <% for(element in theme.menu){%>
             <%var str = theme.menu[element].split(" || ")%>
             <v-list-item href="<%- url_for(str[0]) %>" link>
             <v-list-item-icon><v-icon><%=str[1]%></v-icon></v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title><%= __(element) || element%></v-list-item-title>
+            <v-list-item-content >
+                <%= __(element) || element%>
             </v-list-item-content>
             </v-list-item>
         <%}%>
     </v-list>
     <v-divider></v-divider>
-    <v-list id="cat-menu" dense>
+    <v-list id="sub-menu" class="font-weight-medium" dense>
         <% for(element of site.categories.data){%>
             <%if(!element.parent){%>
                 <v-list-item href="<%- url_for(element.path)%>" link>
                     <v-badge :value="hover" transition="slide-y-transition" inline content="<%=element.length%>" >
                         <v-hover v-model="hover">
                             <v-list-item-content>
-                                <v-list-item-title><%=element.name%></v-list-item-title>                                        
+                                <span><%=element.name%></span>                              
                             </v-list-item-content>                           
                         </v-hover>
                     </v-badge>

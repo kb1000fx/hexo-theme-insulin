@@ -26,13 +26,19 @@ $background-color=rgb(245,245,245)
      //background: $background-color
   }
 }
-#cat-menu{  
+#main-menu{
+  font-size: 18px
+  opacity: .59
+}
+#sub-menu{  
+  font-size: 16px
+  opacity: .75
   & .v-badge{
     margin: auto;
     width: 100%;
   }
   & .v-list-item__content{
-    text-align:center;
+    text-align:right;
   }
 }
 
@@ -65,18 +71,16 @@ $background-color=rgb(245,245,245)
   position: relative;
 }
 
-//
-.post-content{
-  margin: 15px 0;
+/*首页*/
+.index-article-content{
+  margin: 15px 0 5px 0;
 }
-
 .index-card{
   padding: 10px 30px;
   & .index-article{
     padding: 10px 0;
   }
 }
-
 .index-article-header{
   & a{
     text-decoration: none;
@@ -87,24 +91,45 @@ $background-color=rgb(245,245,245)
   & .index-article-header-title{
     font-size: 28px;
     line-height: 42px;
-    opacity: .92;
+    opacity: .96;
   }
   & .index-article-header-category{
     font-size: 20px;
     line-height: 30px;
     opacity: .59;
   }
-}
-
-.index-article-readmore{
-    //color: black;
-    border: 2px solid sub-accent-color;
-    &:hover {
-    background-color: sub-accent-color;
-    color: white;
+  & .index-article-header-date{
+    font-size: 18px;
+    line-height: 27px;
+    opacity: .75;
+  }
+  & .index-article-header-tag{
+    opacity: .75;
+    & .index-article-header-tag-content{
+      padding: 0 5px;
+      color: #ffffff
+      font-size: 18px;
+      line-height: 27px;
     }
+    & .v-icon{
+      color: #ffffff
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+.index-article-readmore{
+  padding-bottom: 15px
+  text-align:center;
+  & .v-btn__content{
+    font-weight: 700
+    font-size: 18px
+    line-height: 27px;
+    opacity: .75;
+  }
 }
 
+/*文章页*/
 .post-header{
   text-align:center;
   position: relative;
@@ -117,7 +142,7 @@ $background-color=rgb(245,245,245)
     display: block;
     font-size: 28px;
     line-height: 42px;
-    opacity: .87;
+    opacity: .96;
     &:visited, &:link {
       color: unset
     }
@@ -125,17 +150,29 @@ $background-color=rgb(245,245,245)
   .post-header-meta{
     display: block;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 18px;
     opacity: .75;
+    margin: 5px 0
     &>span+span::before{
       content: "|";
       margin: 0 0.5em;
     }
-    &>span>i{
-      margin: 0 0.5em 0 0;
+    & .v-icon{
+      font-size: 18px
+      line-height: 18px;
     }
     & a:visited, & a:link {
       color: unset
     }
+  }
+}
+.post-content{
+  padding: 20px 30px
+}
+.post-nav {
+  padding: 5px 0
+  line-height: 21px
+  & .v-icon{
+    font-size: 21px
   }
 }

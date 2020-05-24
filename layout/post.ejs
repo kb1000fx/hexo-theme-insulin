@@ -1,12 +1,51 @@
 <v-card class="elevation-2">
+    <%# Post Header %>
     <% if (page.photos.length != 0) { %>
         <v-img src="<%= page.photos[0] %>" class="post-img white--text align-end">
-            <%- partial('_partial/post-header') %>
+            <%- partial('_partial/post-header',{varHeaderColor:"white"}) %>
         </v-img>
+        <% var varHeaderColor="white"; %>
     <%}else{%>
-        <%- partial('_partial/post-header') %>
+        <%- partial('_partial/post-header',{varHeaderColor:""}) %>
     <%}%>
+    <%#页首广告%>
+    <% if (theme.google_adsense.enabled && theme.google_adsense.banner_slot) { %>
+        <div class="adsense-contain">
+            <%- partial('_partial/banner-adsense') %>
+        </div>
+    <% } %>
+    <%# 正文 %>
     <div class="post-content">
         <%- page.content %>
+    </div>
+    <!--文末结束语-->
+    <% if (theme.passage_end_tag.enabled == true) { %>
+        <div style="text-align:center;color: #ccc;font-size:24px;"> <%- theme.passage_end_tag.text %> </div>
+    <% } %>
+    <!--页脚广告-->
+    <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot) { %>
+        <div class="adsense-contain">
+            <%- partial('_partial/footer-adsense') %>
+        </div>
+    <% } %>
+    <v-divider></v-divider>
+    <%# 底部文章前后导航 %>
+    <div class="post-nav">             
+        <% if (page.prev) { %>
+            <v-btn text class="font-weight-bold" href="<%- url_for(page.prev.path) %>">
+                <v-icon>chevron_left</v-icon>
+                <%- page.prev.title %>
+            </v-btn> 
+        <% } else { %>
+            <v-btn text disabled></v-btn>
+        <% } %>
+        <% if (page.next) { %>  
+            <v-btn text class="float-right font-weight-bold" href="<%- url_for(page.next.path) %>">      
+                <%- page.next.title %>
+                <v-icon>chevron_right</v-icon>
+            </v-btn>
+        <% } else { %>
+            <v-btn text disabled></v-btn>
+        <% } %>
     </div>
 </v-card>
