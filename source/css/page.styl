@@ -28,32 +28,39 @@ blockquote {
 }
 
 /* 响应式图片和视频 */
-.mdui-img-fluid,
-.mdui-video-fluid {
+.img-fluid,
+.video-fluid {
   display: block;
   max-width: 100%;
   height: auto;
 }
 /* 圆角图片 */
-.mdui-img-rounded {
+.img-rounded {
   border-radius: 2px;
 }
 /* 圆形图片 */
-.mdui-img-circle {
+.img-circle {
   border-radius: 50%;
 }
-.mdui-video-container {
+.fluid-video-container {
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
   overflow: hidden;
 }
-.mdui-video-container iframe,
-.mdui-video-container object,
-.mdui-video-container embed {
+.fluid-video-container iframe,
+.fluid-video-container object,
+.fluid-video-container embed {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+/*响应式公式*/
+.math-fluid{
+  overflow-x: auto;
+}
+.mermaid{
+  overflow-x: auto;
 }

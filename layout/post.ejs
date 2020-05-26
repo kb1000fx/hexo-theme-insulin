@@ -1,4 +1,4 @@
-<v-card class="elevation-2">
+<v-card class="elevation-2 post-card">
     <%# Post Header %>
     <% if (page.photos.length != 0) { %>
         <v-img src="<%= page.photos[0] %>" class="post-img white--text align-end">
@@ -10,8 +10,15 @@
     <%}%>
     <%#页首广告%>
     <% if (theme.google_adsense.enabled && theme.google_adsense.banner_slot) { %>
-        <div class="adsense-contain">
-            <%- partial('_partial/banner-adsense') %>
+        <div class="adsense-contain">           
+            <!-- Banner Ads -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-<%= theme.google_adsense.pub_id %>"
+                data-ad-slot="<%= theme.google_adsense.banner_slot %>"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
         </div>
     <% } %>
     <%# 正文 %>
@@ -25,7 +32,14 @@
     <!--页脚广告-->
     <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot) { %>
         <div class="adsense-contain">
-            <%- partial('_partial/footer-adsense') %>
+            <!-- Footer Ads -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-<%= theme.google_adsense.pub_id %>"
+                data-ad-slot="<%= theme.google_adsense.footer_slot %>"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
         </div>
     <% } %>
     <v-divider></v-divider>
@@ -49,3 +63,5 @@
         <% } %>
     </div>
 </v-card>
+<%#评论%>
+<%- partial('_plugin/comment/index') %>

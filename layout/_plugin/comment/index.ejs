@@ -1,0 +1,24 @@
+<% if (page.comments && theme.comment.use) { %>
+    <v-card class="comment-card elevation-2">
+        <v-tabs v-model="commentTab"  id="comment-tabs" @change="TabChange" active-class="active-comment-tab">
+            <% for(element in theme.comment.use) { %>
+                <v-tab><span id="comment-tab-<%=element%>"><%=theme.comment.use[element]%></span></v-tab>
+            <% } %>
+        </v-tabs>
+        <v-tabs-items v-model="commentTab">
+            <% for(element in theme.comment.use) { %>
+                <v-tab-item>
+                    <v-card flat>
+                        <%if(theme.comment.use[element]=='livere'){%>
+                            <%- partial('_plugin/comment/liverehtml') %>
+                        <%}else if(theme.comment.use[element]=='changyan'){%>
+                            <%- partial('_plugin/comment/changyanhtml') %>
+                        <%}else{%>
+                            <div v-html="<%=theme.comment.use[element]%>HTML"></div>
+                        <%}%>          
+                    </v-card>
+                </v-tab-item>
+            <% } %>
+        </v-tabs-items>
+    </v-card>
+<% } %>

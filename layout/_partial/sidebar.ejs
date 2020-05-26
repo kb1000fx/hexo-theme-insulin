@@ -21,8 +21,8 @@
         <% for(element of site.categories.data){%>
             <%if(!element.parent){%>
                 <v-list-item href="<%- url_for(element.path)%>" link>
-                    <v-badge :value="hover" transition="slide-y-transition" inline content="<%=element.length%>" >
-                        <v-hover v-model="hover">
+                    <v-badge :value="menuHover" transition="slide-y-transition" inline content="<%=element.length%>" >
+                        <v-hover v-model="menuHover">
                             <v-list-item-content>
                                 <span><%=element.name%></span>                              
                             </v-list-item-content>                           
