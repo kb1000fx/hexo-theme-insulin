@@ -4,8 +4,9 @@ var app = new Vue({
   data(){
     return {
       currentPage: 1,
-      nightMode:"wb_sunny",
+      nightMode: "wb_sunny",
       menuHover: false,
+      tagHover: false,
       commentTab: 0,
       disqusHTML:'<div id="disqus_thread"></div>',
       gitalkHTML:'<div id="gitalk-container"></div>',
@@ -15,6 +16,7 @@ var app = new Vue({
       changyanClicked: false,
       disqusClicked: false,
       valineClicked: false,
+      searchFieldValue: null,
     }
   },
 
@@ -30,9 +32,11 @@ var app = new Vue({
       if (this.$vuetify.theme.dark == true){
         this.$vuetify.theme.dark = false;
         localStorage.removeItem('insulin-dark');
+        this.nightMode = "wb_sunny";
       }else{
         this.$vuetify.theme.dark = true;
         localStorage.setItem('insulin-dark', true);
+        this.nightMode = "brightness_2";
       }
     },
     TabChange: function(){  
@@ -43,25 +47,27 @@ var app = new Vue({
           'this.'+tabName+'Clicked=true;'
         );
       }
-    }
+    },
+    EnterSearch: function(){
+      console.log("111");
+      window.location.href = "/search/?"+ this.searchFieldValue
+    },
   },
 
-  created: function(){
+  mounted: function () {
     //初始化currentPage
     var varpage = location.pathname.split("page/")[1];
     if(varpage){
       this.currentPage = parseInt(varpage);
     };
-    //初始化NightMode
-    if (localStorage.getItem('insulin-dark')=='true'){
-      this.$vuetify.theme.dark = true;
-    };
-  },
-
-  mounted: function () {
     //初始化评论
     if(document.getElementsByClassName("comment-card").length){
       eval(document.getElementsByClassName("active-comment-tab")[0].children[0].innerHTML + '();');
+    };
+    //初始化NightMode
+    if (localStorage.getItem('insulin-dark')=='true'){
+      this.$vuetify.theme.dark = true;
+      this.nightMode = "brightness_2";
     };
   },
 })

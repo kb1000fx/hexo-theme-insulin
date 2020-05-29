@@ -1,34 +1,45 @@
 @import "highlight"
 @import "page"
 
-$background-color=rgb(245,245,245)
-
-#app{
-  //background: $background-color
-}
-
 #page{
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
 }
 
+/*背景颜色*/
+$background-color-light=rgb(245,245,245)
+$background-color-dark=rgb(18,18,18)
+
+#app {
+  .theme--light.v-application {
+    background: $background-color-light;
+  }
+  .theme--dark.v-application {
+    background: $background-color-dark;
+  }
+  .theme--light.v-list {
+    background: $background-color-light;
+  }
+  .theme--dark.v-list {
+    background: $background-color-dark;
+  }
+}
+
 /*侧边栏*/
 #sidebar {
   position: fixed;
   width:160px;   
-  //height: 850px 
-  //background: $background-color
+
   & .v-avatar{
       margin:15px 32px;
-  }
-  & .v-list{
-     //background: $background-color
   }
 }
 #main-menu{
   font-size: 18px
-  opacity: .59
+  & .v-list-item__content{
+    opacity: .75
+  }
 }
 #sub-menu{  
   font-size: 16px
@@ -40,6 +51,9 @@ $background-color=rgb(245,245,245)
   & .v-list-item__content{
     text-align:right;
   }
+}
+.mini-menu{
+  text-align: center;
 }
 
 /*标题栏*/
@@ -66,8 +80,15 @@ $background-color=rgb(245,245,245)
 
 /*页脚*/
 #footer{
-  //bottom: 100px;
-  position: relative;
+  position: fixed;
+  bottom: 20px;
+  & .footer-content{
+    padding-top: 5px;
+    font-size: 14px;
+  }
+  & .footer-social{
+    padding-bottom: 20px;
+  }
 }
 
 /*首页*/
@@ -184,11 +205,102 @@ $background-color=rgb(245,245,245)
   padding: 15px;
 }
 
-#pop_ad,#feedAv{
-  display:none!important;
-  position:absolute!important;
-  z-index:-9999;
-  left:-1000px;
-  opacity:0!important
+/*Page Describe 页面描述*/
+.page-describe{
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/*Category List 分类列表*/
+.category-list {
+    margin: 20px 60px;
+    padding: 0;
+    list-style: none;
+    & .category-list-item {
+        margin: 5px 10px;
+        & .category-list-link{
+            font-size: 16px;
+            line-height: 32px;
+            &:visited, &:link {
+                color: unset;
+            }
+        }
+    }
+    & .category-list-count {
+        color: #bbb;
+        &::before {
+            display: inline;
+            content: " (";
+        }
+        &::after {
+            display: inline;
+            content: ") ";
+        }
+    }
+    & .category-list-child {
+        padding-left: 10px;
+    }
 }
   
+/*Tags Chip 标签页纸片*/
+.tags-contain{
+  margin: 20px 60px;
+  padding: 0;
+  & .tags-chip{
+    margin: 10px 10px;
+    & a{
+      font-size: 18px;
+      line-height: 27px;
+      text-decoration: none;
+      &:visited, &:link {
+        color: unset;
+      }
+    }
+  }
+}
+
+/* 时间轴 */
+.timeline{
+  margin: 20px 0;
+}
+.timeline-header{
+  padding-bottom: 50px;
+}
+.timeline-title{
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: 700;
+  opacity: 0.75;
+  text-decoration: none;
+  &:visited, &:link {
+    color: unset;
+  }
+}
+.timeline-subtitle{ 
+  padding-left: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  opacity: 0.45;
+}
+.timeline-item-post {
+  & .timeline-item-time{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    opacity: 0.59;
+  }
+
+  & .timeline-item-title{
+    padding-left: 24px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+    opacity: 0.75;
+    text-decoration: none;
+    &:visited, &:link {
+      color: unset;
+    }
+  }
+}

@@ -9,11 +9,7 @@
   </v-col>  
   <v-col cols="4" align-self="end" class="d-none d-md-block">
     <v-col align-self="end">
-      <v-text-field label="Search" prepend-icon="search" clearable clear-icon="clear"></v-text-field>
+      <v-text-field label="Search" v-model="searchFieldValue" prepend-icon="search" clearable clear-icon="clear" @change="EnterSearch"></v-text-field>
     </v-col> 
   </v-col>
 </v-row>
-
-<!--v-btn @click="SetNightMode" icon >
-  <v-icon>{{ nightMode }}</v-icon>
-</v-btn-->
