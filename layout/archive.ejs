@@ -11,8 +11,12 @@
                 <%title_year = item_year%>
             <%}%>
             <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post">
+                <div class="timeline-item-post d-none d-md-block">
                     <span class="timeline-item-time"><%-date(element.date,'Y.MM.DD')%></span>
+                    <a href="<%-url_for(element.path)%>" class="timeline-item-title"><%=element.title%></a>
+                </div>
+                <div class="timeline-item-post-mobile d-block d-md-none">
+                    <span class="timeline-item-time"><%-date(element.date,'Y.MM.DD')%></span><br>
                     <a href="<%-url_for(element.path)%>" class="timeline-item-title"><%=element.title%></a>
                 </div>
                 <v-divider></v-divider>

@@ -30,18 +30,21 @@ $background-color-dark=rgb(18,18,18)
 #sidebar {
   position: fixed;
   width:160px;   
-
   & .v-avatar{
-      margin:15px 32px;
+    margin:15px 32px;
   }
 }
 #main-menu{
-  font-size: 18px
+  overflow: auto;
+  max-height: 400px;
+  font-size: 18px;
   & .v-list-item__content{
-    opacity: .75
+    opacity: .75;
   }
 }
 #sub-menu{  
+  max-height: 300px;
+  overflow: auto;
   font-size: 16px
   opacity: .75
   & .v-badge{
@@ -54,6 +57,24 @@ $background-color-dark=rgb(18,18,18)
 }
 .mini-menu{
   text-align: center;
+}
+
+#mobile-menu{
+  margin: 0 5px;
+  .mobile-mini-menu{
+    margin: 0 auto;  
+  }
+}
+
+#mobile-footer{
+  margin: 0 auto;
+  padding-top: 20px;
+  & #mobile-footer-content{
+    padding-top: 10px;
+    text-align: center;
+    opacity: .75;
+    font-size: 14px;
+  }
 }
 
 /*标题栏*/
@@ -82,6 +103,7 @@ $background-color-dark=rgb(18,18,18)
 #footer{
   position: fixed;
   bottom: 20px;
+  opacity: .75;
   & .footer-content{
     padding-top: 5px;
     font-size: 14px;
@@ -284,23 +306,96 @@ $background-color-dark=rgb(18,18,18)
   font-weight: 700;
   opacity: 0.45;
 }
-.timeline-item-post {
-  & .timeline-item-time{
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 600;
-    opacity: 0.59;
+.timeline-item-time{
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 600;
+  opacity: 0.59;
+}
+.timeline-item-title{
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  opacity: 0.75;
+  text-decoration: none;
+  &:visited, &:link {
+    color: unset;
   }
-
+}
+.timeline-item-post {
   & .timeline-item-title{
     padding-left: 24px;
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 600;
-    opacity: 0.75;
+  }
+}
+
+/*搜索页*/
+#search-result{
+  min-height: 80%;
+  padding-top: 20px;
+  & .search-post{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    & .search-post-title{
+      padding-bottom: 10px;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 700;
+      opacity: 0.75;
+      text-decoration: none;
+      &:visited, &:link {
+        color: unset;
+      }
+    }
+    & .search-post-content{
+      font-size: 16px;
+      line-height: 24px;
+    }
+    & .search-post-bold{
+      padding: 0 2px;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 600;
+      opacity: 0.75;
+    }
+  }
+}
+
+/*目录*/
+.post-toc{
+  height: 250px;
+  & .toc-header {
+    padding: 10px 0;
+    display: block;
+    height: unset;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    opacity: .75;
     text-decoration: none;
     &:visited, &:link {
       color: unset;
+    }
+  }
+  & .toc-content{
+    max-height: 300px;
+    overflow: auto;
+    & ol{
+      margin: 0;
+      padding-left: 10px;
+      text-align: left;
+      list-style: none;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 600;
+      opacity: .8;
+      & a{
+        text-decoration: none;
+        &:visited, &:link {
+          color: unset;
+        }
+      }
     }
   }
 }

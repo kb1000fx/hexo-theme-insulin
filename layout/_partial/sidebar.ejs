@@ -31,21 +31,30 @@
         <%}%>
     </v-list>
     <v-divider></v-divider>
-    <v-list id="sub-menu" class="font-weight-medium" dense>
-        <% for(element of site.categories.data){%>
-            <%if(!element.parent){%>
-                <v-list-item href="<%- url_for(element.path)%>" link>
-                    <v-badge :value="menuHover" transition="slide-y-transition" inline content="<%=element.length%>" >
-                        <v-hover v-model="menuHover">
-                            <v-list-item-content>
-                                <span><%=element.name%></span>                              
-                            </v-list-item-content>                           
-                        </v-hover>
-                    </v-badge>
-                </v-list-item>
+    <%if(is_post() && (page.toc != false)){%>
+        <div class="post-toc">
+            <a href="<%-url_for(page.path)%>" class="toc-header"><%=__("toc")%></a>
+            <div class="toc-content">
+                <%- toc(page.content, {class: 'toc', list_number: true}) %>
+            </div>
+        </div>
+    <%}else{%>
+        <v-list id="sub-menu" class="font-weight-medium" dense>
+            <% for(element of site.categories.data){%>
+                <%if(!element.parent){%>
+                    <v-list-item href="<%- url_for(element.path)%>" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="<%=element.length%>" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span><%=element.name%></span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                <%}%>
             <%}%>
-        <%}%>
-    </v-list>
+        </v-list>    
+    <%}%>
 
     <div id="footer">
         <div class="footer-social">

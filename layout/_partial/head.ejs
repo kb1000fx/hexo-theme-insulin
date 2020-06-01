@@ -18,7 +18,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <%- css('/css/main.css') %>
     <%# Google Analytics %>
     <%if(theme.analytics.google_analytics.tracking_id){%>
         <%- partial('_plugin/analytics/google-analytics') %>

@@ -12,7 +12,14 @@
                         </v-col>
                         <v-col cols="12" md="10">
                             <%- partial('_partial/header') %>
-                            <%- body %>                           
+                            <%- body %>        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; <% if (theme.since) { %><%= theme.since %> - <% } %><%- date(new Date(), 'YYYY') %> <%= config.author || config.title %></span>
+                                </div>
+                            </div>                   
                         </v-col>                                            
                     </v-row>
                 </v-container>

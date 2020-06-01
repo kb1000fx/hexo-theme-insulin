@@ -1,6 +1,6 @@
 <v-card class="elevation-2 post-card">
     <div class="post-header">
-        <a class="post-header-title font-weight-medium" href="<%-url_for(page.path)%>"><%=page.title%></a>
+        <a class="post-header-title font-weight-medium" href="<%-url_for(page.path)%>"><%=__(page.title.toLowerCase()) || page.title%></a>
     </div>
     <div class="post-content">
         <%if(page.type=='categories'){%>
@@ -23,6 +23,9 @@
                     </v-badge>
                 <%})%>
             </div>
+        <%}else if(page.type=='search'){%>
+            <v-text-field label="Search" v-model="searchPageValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchPageValue,true)"></v-text-field>
+            <v-card class="elevation-0" id="search-result"></v-card>
         <%}else{%>
             <%- page.content %>
         <%}%>
