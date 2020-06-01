@@ -6,13 +6,13 @@
     </a>
     <v-divider></v-divider>
     <div class="mini-menu">
-        <v-btn icon href="/">
+        <v-btn icon href="<%- url_for('/') %>">
             <v-icon>home</v-icon>
         </v-btn>
-        <v-btn icon href="/categories/">
+        <v-btn icon href="<%- url_for('/categories/') %>">
             <v-icon>folder</v-icon>
         </v-btn>
-        <v-btn icon href="/tags/">
+        <v-btn icon href="<%- url_for('/tags/') %>">
             <v-icon>bookmark</v-icon>
         </v-btn>
         <v-btn icon @click="SetNightMode">
