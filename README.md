@@ -1,4 +1,4 @@
-# insulin
+# Insulin
 
 ![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue) 
 ![Node.JS](https://img.shields.io/badge/node.js-6.0-brightgreen)
@@ -29,4 +29,5 @@ Insulin是一款响应式的Hexo主题。如有任何问题请发Github Issue，
 更多使用说明详见下面的说明文档：
 
 + [Doc](https://kb1000fx.github.io/hexo-theme-insulin/doc/#/en/)
++ [中文文档](https://kb1000fx.github.io/hexo-theme-insulin/doc/#/)
   
