@@ -67,6 +67,12 @@
         </div>
         <v-divider></v-divider>
         <div class="footer-content">
+            <% if (theme.busuanzi.site) { %>
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    <%=__('total_visitors')%> <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            <% } %>
             <span>Theme: <a href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
             <span>Powered by <a href="https://hexo.io/">Hexo</a></span><br>
             <span>
