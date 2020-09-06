@@ -2,7 +2,7 @@
     <div class="post-header">
         <a class="post-header-title font-weight-medium" href="<%-url_for(page.path)%>"><%=__(page.title.toLowerCase()) || page.title%></a>
     </div>
-    <div class="post-content">
+    <div class="post-content typo">
         <%if(page.type=='categories'){%>
             <div class="page-describe">
                 <%=_p('counter.categories',site.categories.length)%>
