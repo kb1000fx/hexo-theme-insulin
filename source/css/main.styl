@@ -28,24 +28,27 @@ $background-color-dark=rgb(18,18,18)
 }
 
 /*侧边栏*/
+$main-menu-height=calc(0.55 * (100vh - 24px - 30px - 96px - 36px - 150px))
+$sub-menu-height=calc(0.45 * (100vh - 24px - 30px - 96px - 36px - 150px))
+
 #sidebar {
   position: fixed;
-  width:160px;   
+  width:166px;   
   & .v-avatar{
-    margin:15px 32px;
+    margin: 15px 35px;
   }
 }
 #main-menu{
   overflow: auto;
-  max-height: 400px;
+  max-height: $main-menu-height;
   font-size: 18px;
   & .v-list-item__content{
     opacity: .75;
   }
 }
 #sub-menu{  
-  max-height: 300px;
   overflow: auto;
+  max-height: $sub-menu-height;
   font-size: 16px
   opacity: .75
   & .v-badge{
@@ -62,8 +65,11 @@ $background-color-dark=rgb(18,18,18)
 
 #mobile-menu{
   margin: 0 5px;
-  .mobile-mini-menu{
-    margin: 0 auto;  
+  & .mobile-mini-menu{
+    text-align: center
+    white-space:nowrap
+    height: 37px
+    overflow-x: auto
   }
 }
 
@@ -103,14 +109,14 @@ $background-color-dark=rgb(18,18,18)
 /*页脚*/
 #footer{
   position: fixed;
-  bottom: 20px;
+  bottom: 12px;
   opacity: .75;
   & .footer-content{
     padding-top: 5px;
     font-size: 14px;
   }
   & .footer-social{
-    padding-bottom: 20px;
+    padding-bottom: 12px;
   }
 }
 
@@ -364,7 +370,7 @@ $background-color-dark=rgb(18,18,18)
 
 /*目录*/
 .post-toc{
-  height: 250px;
+  height: $sub-menu-height
   & .toc-header {
     padding: 10px 0;
     display: block;
@@ -380,7 +386,7 @@ $background-color-dark=rgb(18,18,18)
     }
   }
   & .toc-content{
-    max-height: 300px;
+    height: calc(100% - 47px);
     overflow: auto;
     & ol{
       margin: 0;
