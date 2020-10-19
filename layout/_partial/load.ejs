@@ -1,6 +1,7 @@
 <%# JS %>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <%- js("/js/main.js") %>
 
 <%# 不蒜子计数 %>
@@ -30,11 +31,4 @@
     <%if( is_post() && theme.google_adsense.footer_slot){%>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>  
     <%}%>
-<%}%>
-
-<%# 评论%>
-<% if (page.comments && theme.comment.use) { %>
-    <% for(element in theme.comment.use) { %>
-        <%- partial('_plugin/comment/'+ theme.comment.use[element]) %>
-    <% } %>
 <%}%>

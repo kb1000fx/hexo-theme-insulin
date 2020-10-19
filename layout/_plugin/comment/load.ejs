@@ -1,0 +1,15 @@
+<% if (page.comments && theme.comment.use) { %>
+    <% for(element in theme.comment.use) { %>
+        <%if(theme.comment.use[element]=='changyan'){%>
+            <style>#pop_ad,#feedAv{display:none!important;position:absolute!important;z-index:-9999;left:-1000px;opacity:0!important}</style>
+        <%}else if(theme.comment.use[element]=='gitalk'){%>  
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+            <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+        <%}else if(theme.comment.use[element]=='valine'){%> 
+            <script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+            <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+        <%}%>
+    <%}%>
+<%}%>
