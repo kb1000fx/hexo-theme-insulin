@@ -126,7 +126,7 @@ var app = new Vue({
 
     mounted: function () {
         //初始化评论设置
-        this.commentConfig = JSON.parse(window.atob(document.getElementById('tabs-content').getAttribute("data")));
+        this.commentConfig = JSON.parse(Base64.decode(document.getElementById('tabs-content').getAttribute("data")));
         for (let e in this.commentConfig.use) {
             eval('this.commentFunction.' + this.commentConfig.use[e] + '();');
         }
