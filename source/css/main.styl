@@ -223,11 +223,40 @@ $sub-menu-height=calc(0.45 * (100vh - 24px - 30px - 96px - 36px - 150px))
   padding: 20px 30px
 }
 .post-nav {
-  padding: 5px 0
-  line-height: 21px
+    height: 34px
+}
+.post-nav-button {
+  color: rgba(0, 0, 0, 0.87)
+  opacity: .75
+  font-size: 16px
+  line-height: 1.5
+  width: 40%
+  margin: 5px 0
+  vertical-align: center
   & .v-icon{
-    font-size: 21px
+    display: inline
+    font-size: 24px
+    vertical-align: unset
   }
+  & a{    
+    display: inline-block;
+    width: calc(100% - 30px);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    &:visited, &:link {
+        color: unset;
+    }
+  }
+}
+
+.text-right{
+    text-align: right
+}
+
+.text-left{
+    text-align: left
 }
 
 .comment-card{

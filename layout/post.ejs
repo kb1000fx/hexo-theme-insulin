@@ -46,20 +46,20 @@
     <%# 底部文章前后导航 %>
     <div class="post-nav">             
         <% if (page.prev) { %>
-            <v-btn text class="font-weight-bold" href="<%- url_for(page.prev.path) %>">
+            <div class="post-nav-button float-left">
                 <v-icon>chevron_left</v-icon>
-                <%- page.prev.title %>
-            </v-btn> 
-        <% } else { %>
-            <v-btn text disabled></v-btn>
-        <% } %>
+                <a class="font-weight-bold text-left" href="<%- url_for(page.prev.path) %>">
+                    <%- page.prev.title %>
+                </a>
+            </div>
+        <% } %>      
         <% if (page.next) { %>  
-            <v-btn text class="float-right font-weight-bold" href="<%- url_for(page.next.path) %>">      
-                <%- page.next.title %>
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="<%- url_for(page.next.path) %>">      
+                    <%- page.next.title %>
+                </a>
                 <v-icon>chevron_right</v-icon>
-            </v-btn>
-        <% } else { %>
-            <v-btn text disabled></v-btn>
+            </div>
         <% } %>
     </div>
 </v-card>
