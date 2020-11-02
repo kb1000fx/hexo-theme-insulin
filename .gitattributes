@@ -1,0 +1,3 @@
+*.ejs linguist-language=vue
+*.js linguist-language=vue
+*.styl linguist-language=stylus

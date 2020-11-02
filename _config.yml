@@ -1,0 +1,103 @@
+######
+avatar: /images/avatar.webp
+favicon: /images/favicon.ico
+excerpt_length: 300 #自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳 
+grey_mode: false
+since: 2015
+
+#####侧边栏#####
+# 菜单
+menu:
+  archives: /archives/ || archive
+  about: /about/ || account_circle
+  我的博客: https://garybear.cn/ || rss_feed
+  说明文档: https://garybear.cn/hexo-theme-insulin/doc/#/ || insert_drive_file
+
+# 社交链接
+social:
+  E-Mail: mailto:kb1000fx@gmail.com || fas fa-envelope
+  GitHub: https://github.com/kb1000fx || fab fa-github
+  Steam: https://steamcommunity.com/profiles/76561198346798163 || fab fa-steam
+  Weibo: https://weibo.com/kb1000fx || fab fa-weibo
+
+
+# Google Adsense广告代码
+google_adsense:
+  enabled: false
+  auto_ad: true
+  pub_id: 
+  footer_slot: 
+  banner_slot: 
+
+#####文章#####
+# 文末结束语
+passage_end_tag:
+  enabled: true
+  text: --- 本文结束 <i class="fas fa-heart"></i> The End ---
+
+# 数学公式渲染
+math:
+  enabled: true
+  engine: mathjax ##可选渲染引擎：mathjax、katex
+  mathjax:
+    cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mhchem: true
+  katex:
+    cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
+    cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
+    auto_render: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js
+
+# mermaid 
+mermaid:
+  enable: true 
+  version: "8.4.8" 
+  startOnload: true  #default true
+  theme: 'default'    #default, forest, dark, neutral.
+##########
+
+
+# 不蒜子计数
+busuanzi:
+  site: true
+  page: true
+  busuanzi_js: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+##########
+
+#####第三方服务#####
+# 评论
+comment:
+  use: false #false或Array形式
+  ## Gitalk
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_repo: 
+  gitalk_owner: 
+  gitalk_sid_type:
+  gitalk_distractionFreeMode: true
+  ## Disqus
+  disqus_shortname:
+  ## Livere
+  livere_data_uid: 
+  ## Valine
+  valine_leancloud_app_id:
+  valine_leancloud_app_key:
+  valine_option:  #valine_option为Object形式，详见https://valine.js.org/configuration.html
+  ## 畅言
+  changyan_app_id:
+  changyan_app_key:
+  changyan_sid_type:
+
+# 分析
+analytics:
+  google_analytics:
+    tracking_id: 
+    localhost_ignored: true
+  baidu_site_id:
+  cnzz_site_id:
+  tencent_site_id:
+##########
+
+search:
+  local: false
+  path: search.xml
+  placeholder: 请输入关键字
