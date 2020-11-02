@@ -1,5 +1,0 @@
-<%if(theme.math.enabled == true){%>
-    <%if (is_home() || (page.mathjax==true) || (page.katex==true)) {%>
-        <%- partial('_plugin/math/' + theme.math.engine) %>
-    <%}%>      
-<%}%>
