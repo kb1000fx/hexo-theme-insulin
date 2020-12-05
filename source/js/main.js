@@ -125,15 +125,6 @@ var app = new Vue({
     },
 
     mounted: function () {
-        //初始化评论设置
-        ((el)=>{
-            if(el){
-                this.commentConfig = JSON.parse(Base64.decode(el.getAttribute("data")));
-                for (let e in this.commentConfig.use) {
-                    eval('this.commentFunction.' + this.commentConfig.use[e] + '();');
-                }
-            }
-        })(document.getElementById('tabs-content'));
         //初始化currentPage
         ((varpage)=>{
             if(varpage){
@@ -172,5 +163,20 @@ var app = new Vue({
                 });
             }
         })(location.pathname);
+        //初始化评论设置
+        ((el)=>{
+            if(el){
+                this.commentConfig = JSON.parse(Base64.decode(el.getAttribute("data")));
+                for (let e in this.commentConfig.use) {
+                    eval('this.commentFunction.' + this.commentConfig.use[e] + '();');
+                }
+            }
+        })(document.getElementById('tabs-content'));
+        //Google Adsense
+        (()=>{
+            for (let index = 0; index < document.getElementsByClassName('adsense-contain').length; index++) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        })();
     },
 })
